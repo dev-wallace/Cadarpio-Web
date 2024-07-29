@@ -1,5 +1,5 @@
 package me.wallacedev.cadarpioweb.food;
 
-public class FoodRequestDTO {
+public record FoodRequestDTO(String title, String image, Integer price) {
 
 }
