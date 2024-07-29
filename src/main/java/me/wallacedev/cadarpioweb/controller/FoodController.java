@@ -11,11 +11,7 @@ import me.wallacedev.cadarpioweb.food.FoodRepository;
 import me.wallacedev.cadarpioweb.food.FoodRequestDTO;
 import me.wallacedev.cadarpioweb.food.FoodResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -31,6 +27,8 @@ public class FoodController {
     @Autowired
     private FoodRepository repository;
 
+
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
         @PostMapping
     public void saveFood(@RequestBody FoodRequestDTO data){
         Food foodData = new Food(data);
@@ -39,13 +37,13 @@ public class FoodController {
     }
 
 
-
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping
     public List<FoodResponseDTO> getAll(){
 
         // O método findAll do repositório retorna uma lista de entidades Food.
         //o nosso repositório esta retornando uma entidade do tipo food precisamos transformar este dado.
-        //nos usamos o método stream que e como se fosse um funil e todo objeto que cair dentro do funil a gente transfere para o tipo de dados correto.
+        //nos usamos o método stream que e como se fosse um funil e todo objeto que cair dentro do funil a gente transfere para o tipo de dado correto.
         List<FoodResponseDTO> foodList = repository.findAll().stream()
 
                 .map(FoodResponseDTO::new )//map(FoodResponseDTO::new): Aplica a transformação onde cada entidade Food é convertida em um FoodResponseDTO.
