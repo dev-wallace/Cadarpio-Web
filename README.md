@@ -24,3 +24,4 @@ O projeto **Cardápio Web** é uma aplicação que permite a visualização e ge
 
 
 ![Projeto no VSCODE](https://github.com/user-attachments/assets/34261dc7-8ad2-4916-8f43-6e0b50ad6adf)
+![Captura de tela 2024-08-29 160411](https://github.com/user-attachments/assets/d151670c-f827-4a74-a691-eaeaa2f44ea7)
